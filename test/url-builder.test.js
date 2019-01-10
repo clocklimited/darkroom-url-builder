@@ -144,6 +144,14 @@ describe('Builder', function () {
     })
   })
 
+  describe('download()', function () {
+    it('should build a URL pointing to the /download endpoint', function () {
+      var builder = createDarkroomUrlBuilder('http://darkroom.io', 'test salt')
+        , url = builder().resource('012ef7ed27c17ea9524f5f5fb3a86921').download()
+      assert(/^http:\/\/darkroom.io\/download\/012ef7ed27c17ea9524f5f5fb3a86921:[\w\d]{32}$/.test(url))
+    })
+  })
+
   describe('url()', function () {
 
     it('should error if the resource has not been set', function () {

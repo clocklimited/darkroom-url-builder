@@ -58,6 +58,10 @@ Builder.prototype.info = function () {
   return constructUrl(this.darkroomHost, this.salt, [ 'info' ], this._resource)
 }
 
+Builder.prototype.download = function () {
+  return constructUrl(this.darkroomHost, this.salt, [ 'download' ], this._resource)
+}
+
 Builder.prototype.url = function () {
 
   if (!this._resource) throw new Error('Cannot build a url without a valid resource')
